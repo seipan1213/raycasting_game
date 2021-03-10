@@ -6,11 +6,11 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:46:42 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:46:42 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 07:31:50 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	get_img(void *mlx, char *path, t_img *img)
 {

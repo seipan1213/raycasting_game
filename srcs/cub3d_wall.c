@@ -6,24 +6,24 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:55:28 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:55:28 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 07:34:36 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	paint_cf(t_god *g)
 {
 	int	x;
 	int	y;
 
-	x = 0;
-	while (x++ < g->scr_w)
+	x = -1;
+	while (++x < g->scr_w)
 	{
-		y = 0;
-		while (y++ < g->scr_h / 2)
+		y = -1;
+		while (++y < g->scr_h / 2)
 			my_mlx_pixel_put(g, x, y, g->ceil_color);
-		while (y++ < g->scr_h)
+		while (++y < g->scr_h)
 			my_mlx_pixel_put(g, x, y, g->floor_color);
 	}
 }

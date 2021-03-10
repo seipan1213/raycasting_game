@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_raycast.c                                    :+:      :+:    :+:   */
+/*   cub3d_ratcast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:49:58 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:49:58 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 07:31:09 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	ray_hitsp(t_god *g, int *mx)
 {
@@ -68,7 +68,7 @@ void	ray_calc(t_god *g, int x)
 {
 	int *mx;
 
-	if (!(mx = ft_calloc(sizeof(int), MAX(g->map_h, g->map_w) * 4)))
+	if (!(mx = ft_calloc(sizeof(int), fmax(g->map_h, g->map_w) * 4)))
 		return (set_err(g, "map malloc error\n"));
 	ray_dist_step(g);
 	ray_hitsp(g, mx);
@@ -89,8 +89,7 @@ void	ray_calc(t_god *g, int x)
 	wall_verline(g, x);
 	sprite_verline(g, x, mx);
 }
-//1 1 2.500000 1.500000 -1.041667 1.000000
-//1 2 1.500000 2.500000 -1.041667 1.000000
+
 void	raycast(t_god *g)
 {
 	int		x;
@@ -104,8 +103,8 @@ void	raycast(t_god *g)
 		g->raydiry = g->pl.diry + g->planey * cx;
 		g->mapxy.first = (int)(g->pl.x);
 		g->mapxy.second = (int)(g->pl.y);
-		g->ddist.first = ABS(1 / g->raydirx);
-		g->ddist.second = ABS(1 / g->raydiry);
+		g->ddist.first = fabs(1 / g->raydirx);
+		g->ddist.second = fabs(1 / g->raydiry);
 		ray_calc(g, x);
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:48:42 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:48:42 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:43:12 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	set_err(t_god *g, char *str)
 {
@@ -61,6 +61,8 @@ void	destory_g(t_god *g)
 
 void	exit_g(t_god *g)
 {
+	if (g->err_msg)
+		write(1, g->err_msg, ft_strlen(g->err_msg));
 	destory_g(g);
 	exit(0);
 }

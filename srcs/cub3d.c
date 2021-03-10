@@ -6,11 +6,11 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:26:47 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 15:26:47 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:43:32 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	init_god(t_god *g)
 {
@@ -75,12 +75,11 @@ int		main(int argc, char **argv)
 	if (!g.mlx)
 		set_err(&g, "MLX error\n");
 	load_file(&g, argc, argv);
+	if (g.err_msg)
+		exit_g(&g);
 	init_god(&g);
 	if (g.err_msg)
-	{
-		write(1, g.err_msg, ft_strlen(g.err_msg));
 		exit_g(&g);
-	}
 	mlx_hook(g.win, X_E_P, X_M_P, &keypress_hook, &g);
 	mlx_hook(g.win, X_E_R, X_M_R, &keyrelease_hook, &g);
 	mlx_hook(g.win, X_E_E, X_M_E, &exit_hook, &g);

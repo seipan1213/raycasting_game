@@ -1,9 +1,21 @@
-#include "cub3d.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d_update.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/10 15:17:32 by sehattor          #+#    #+#             */
+/*   Updated: 2021/03/10 07:33:44 by sehattor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/cub3d.h"
 
 void	playermove(t_god *g)
 {
-	double	oldPlaneX;
-	double	oldDirX;
+	double	oldplanex;
+	double	olddirx;
 
 	if (g->map[(int)(g->pl.x + g->pl.dirx * g->pl.movespeed_fb)]
 		[(int)(g->pl.y)] != '1')
@@ -17,15 +29,15 @@ void	playermove(t_god *g)
 	if (g->map[(int)(g->pl.x)]
 		[(int)(g->pl.y + g->planey * g->pl.movespeed_rl)] != '1')
 		g->pl.y += g->planey * g->pl.movespeed_rl;
-	oldDirX = g->pl.dirx;
+	olddirx = g->pl.dirx;
 	g->pl.dirx = g->pl.dirx * cos(g->pl.rotspeed) -
 		g->pl.diry * sin(g->pl.rotspeed);
-	g->pl.diry = oldDirX * sin(g->pl.rotspeed) +
+	g->pl.diry = olddirx * sin(g->pl.rotspeed) +
 		g->pl.diry * cos(g->pl.rotspeed);
-	oldPlaneX = g->planex;
+	oldplanex = g->planex;
 	g->planex = g->planex * cos(g->pl.rotspeed) -
 		g->planey * sin(g->pl.rotspeed);
-	g->planey = oldPlaneX * sin(g->pl.rotspeed) +
+	g->planey = oldplanex * sin(g->pl.rotspeed) +
 		g->planey * cos(g->pl.rotspeed);
 }
 

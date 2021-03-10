@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 01:16:23 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/04 14:38:17 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/09 14:34:42 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 								void (*del)(void *));
-void	ft_lstdel_front(t_list **lst);
+void				ft_lstdel_front(t_list **lst);
 
 #endif

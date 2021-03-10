@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 14:58:29 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:58:29 by sehattor         ###   ########.fr       */
+/*   Created: 2021/03/09 14:35:44 by sehattor          #+#    #+#             */
+/*   Updated: 2021/03/10 07:12:57 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@
 # include <float.h>
 # include "../minilibx-linux/mlx.h"
 
-# define ABS(x) (0 < (x) ? (x) : -(x))
-# define MIN(a, b) ((a) < (b) ? (a) : (b))
-# define MAX(a, b) ((a) < (b) ? (b) : (a))
 # define FALSE 0
 # define TRUE 1
 # define SPACE " \t\n\v\f\r"

@@ -6,11 +6,11 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:43:57 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:43:57 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 07:30:46 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	bfs_clear(t_god *g, int **map, t_list **lst, int error)
 {

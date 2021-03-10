@@ -6,11 +6,11 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:47:37 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:47:37 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 07:28:53 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	littleendian(unsigned char *s, unsigned int n, int size)
 {

@@ -6,11 +6,11 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:56:43 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/02 14:56:43 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 07:34:09 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	my_mlx_pixel_put(t_god *g, int x, int y, int color)
 {
