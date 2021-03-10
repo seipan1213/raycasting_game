@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:53:02 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 07:32:09 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:07:13 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	make_sprite(t_god *g, int x, int *ymask, t_ipair *s_pos)
 	dl.transform = convert_trans(g, s_pos->first, s_pos->second);
 	dl.spritescreenx = (int)((g->scr_w / 2) *
 								(1 + dl.transform.first / dl.transform.second));
-	dl.spriteheight = fabs((int)(g->scr_h / (dl.transform.second)));
-	dl.drawstarty = fmax(0, -dl.spriteheight / 2 + g->scr_h / 2);
-	dl.drawendy = fmin(dl.spriteheight / 2 + g->scr_h / 2, g->scr_h - 1);
+	dl.spriteheight = ft_abs((int)(g->scr_h / (dl.transform.second)));
+	dl.drawstarty = ft_max(0, -dl.spriteheight / 2 + g->scr_h / 2);
+	dl.drawendy = ft_min(dl.spriteheight / 2 + g->scr_h / 2, g->scr_h - 1);
 	if (dl.transform.second <= 0)
 		return ;
 	if (x < -dl.spriteheight / 2 + dl.spritescreenx ||

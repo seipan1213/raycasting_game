@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 01:16:23 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/09 14:34:42 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:05:14 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_abs(int i);
+int					ft_max(int a, int b);
+int					ft_min(int a, int b);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);

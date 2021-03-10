@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_ratcast.c                                    :+:      :+:    :+:   */
+/*   cub3d_raycast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:49:58 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 07:31:09 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:15:37 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ray_calc(t_god *g, int x)
 {
 	int *mx;
 
-	if (!(mx = ft_calloc(sizeof(int), fmax(g->map_h, g->map_w) * 4)))
+	if (!(mx = ft_calloc(sizeof(int), ft_max(g->map_h, g->map_w) * 4)))
 		return (set_err(g, "map malloc error\n"));
 	ray_dist_step(g);
 	ray_hitsp(g, mx);

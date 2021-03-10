@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:39:01 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 07:29:51 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:06:31 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	analyze_map(t_god *g, char *line)
 	{
 		ft_lstadd_back(&g->map_list, ft_lstnew(ft_strdup(line)));
 		g->map_h++;
-		g->map_w = fmax(g->map_w, (int)ft_strlen(line));
+		g->map_w = ft_max(g->map_w, (int)ft_strlen(line));
 	}
 	free(line);
 	free(str);
