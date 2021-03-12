@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:43:57 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 07:30:46 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:05:54 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	bfs_clear(t_god *g, int **map, t_list **lst, int error)
 		free(map[c++]);
 	free(map);
 	if (error)
-		set_err(g, "map don't close\n");
+		set_err(g, "map error\n");
 	ft_lstclear(lst, &free);
 	free(lst);
 }
@@ -101,7 +101,7 @@ void	check_map(t_god *g)
 			if (ft_strchr("NSWE", g->map[i][j]))
 			{
 				if (is_pl || !(is_pl = 1))
-					set_err(g, "2 player error\n");
+					set_err(g, "map error\n");
 				set_pl(g, i, j);
 				p.first = i;
 				p.second = j;
@@ -109,7 +109,7 @@ void	check_map(t_god *g)
 		}
 	}
 	if (is_pl == 0)
-		set_err(g, "no player\n");
+		set_err(g, "map error\n");
 	map_isclose(g, p);
 }
 
