@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:26:47 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 15:43:32 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/13 15:52:40 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	init_god(t_god *g)
 {
-	if (g->scr_w > 0 && g->scr_h > 0)
-		g->win = mlx_new_window(g->mlx, g->scr_w, g->scr_h, g->cub_name);
-	if (!g->win)
-		set_err(g, "Error creating MLX window.\n");
 	g->w_img.img = mlx_new_image(g->mlx, g->scr_w, g->scr_w);
 	g->w_img.addr = mlx_get_data_addr(g->w_img.img, &g->w_img.bpp,
 									&g->w_img.llen, &g->w_img.endian);
@@ -74,15 +70,23 @@ int		main(int argc, char **argv)
 	g.mlx = mlx_init();
 	if (!g.mlx)
 		set_err(&g, "MLX error\n");
+	else
+		mlx_get_screen_size(g.mlx, &g.scr_w, &g.scr_h);
 	load_file(&g, argc, argv);
 	if (g.err_msg)
 		exit_g(&g);
 	init_god(&g);
 	if (g.err_msg)
 		exit_g(&g);
-	mlx_hook(g.win, X_E_P, X_M_P, &keypress_hook, &g);
-	mlx_hook(g.win, X_E_R, X_M_R, &keyrelease_hook, &g);
-	mlx_hook(g.win, X_E_E, X_M_E, &exit_hook, &g);
-	mlx_loop_hook(g.mlx, &update, &g);
-	mlx_loop(g.mlx);
+	if (!g.bmp)
+	{
+		g.win = mlx_new_window(g.mlx, g.scr_w, g.scr_h, g.cub_name);
+		mlx_hook(g.win, X_E_P, X_M_P, &keypress_hook, &g);
+		mlx_hook(g.win, X_E_R, X_M_R, &keyrelease_hook, &g);
+		mlx_hook(g.win, X_E_E, X_M_E, &exit_hook, &g);
+		mlx_loop_hook(g.mlx, &update, &g);
+		mlx_loop(g.mlx);
+		return (0);
+	}
+	update(&g);
 }

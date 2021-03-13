@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:46:42 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 07:31:50 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/13 15:55:27 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ int		read_num(int *i, char **str)
 void	read_r(t_god *g, char *str)
 {
 	int	ret;
+	int	w;
 
 	ret = 1;
-	if (g->scr_w || g->scr_h)
+	if (g->isr)
 		return (set_err(g, "R error\n"));
+	g->isr = 1;
 	str++;
-	ret &= read_num(&g->scr_w, &str);
-	ret &= read_num(&g->scr_h, &str);
+	ret &= read_num(&w, &str);
+	g->scr_w = ft_min(g->scr_w, w);
+	ret &= read_num(&w, &str);
+	g->scr_h = ft_min(g->scr_h, w);
 	if (g->scr_w <= 0 || g->scr_h <= 0 || !ret)
 		return (set_err(g, "R Size error\n"));
-	if (g->scr_w > 1920)
-		g->scr_w = 1920;
-	if (g->scr_h > 1080)
-		g->scr_h = 1080;
 }
 
 void	read_cf(t_god *g, char *str)
