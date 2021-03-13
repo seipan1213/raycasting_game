@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:39:01 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/10 16:06:31 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/13 16:10:19 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,15 @@ void	analyze_map(t_god *g, char *line)
 
 	if (!(str = ft_strtrim(line, SPACE)))
 		return ;
-	if (is_map(str))
+	if (is_map(str) && g->mapend != 1)
 	{
 		ft_lstadd_back(&g->map_list, ft_lstnew(ft_strdup(line)));
 		g->map_h++;
 		g->map_w = ft_max(g->map_w, (int)ft_strlen(line));
+		g->mapend = 2;
 	}
+	else if (*str != '\0' && g->mapend == 2)
+		set_err(g, "map error\n");
 	free(line);
 	free(str);
 }

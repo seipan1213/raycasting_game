@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 14:35:44 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/13 15:54:58 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/13 16:06:05 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ typedef struct	s_god
 	int			bmp;
 	size_t		i_zero_color;
 	int			isr;
+	int			mapend;
 }				t_god;
 
 void			my_mlx_pixel_put(t_god *g, int x, int y, int color);
