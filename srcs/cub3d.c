@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:26:47 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/13 15:52:40 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/13 18:08:44 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init_god(t_god *g)
 {
-	g->w_img.img = mlx_new_image(g->mlx, g->scr_w, g->scr_w);
+	g->w_img.img = mlx_new_image(g->mlx, g->scr_w, g->scr_h);
 	g->w_img.addr = mlx_get_data_addr(g->w_img.img, &g->w_img.bpp,
 									&g->w_img.llen, &g->w_img.endian);
 	mlx_do_key_autorepeatoff(g->mlx);

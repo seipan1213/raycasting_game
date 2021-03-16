@@ -6,7 +6,7 @@
 /*   By: sehattor <sehattor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:39:01 by sehattor          #+#    #+#             */
-/*   Updated: 2021/03/13 16:10:19 by sehattor         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:40:47 by sehattor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	check_file(t_god *g, int fd)
 {
 	close(fd);
 	if (!g->ceil_color || !g->floor_color || !g->map_h || !g->map_w ||
-			!g->scr_h || !g->scr_w || !g->so_img.img || !g->no_img.img ||
+			!g->isr || !g->so_img.img || !g->no_img.img ||
 			!g->we_img.img || !g->ea_img.img || !g->s_img.img)
 		return (set_err(g, "incomplete cubfile\n"));
 }
