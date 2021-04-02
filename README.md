@@ -1,3 +1,6 @@
 # raycasting_game
 make
-./cub3D test.cub or ./cub3D test.cub --save
+
+./cub3D test.cub
+
+./cub3D test.cub --save
