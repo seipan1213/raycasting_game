@@ -31,3 +31,10 @@ Map　0　なし　1  壁　2　スプライト　NSWE プレイヤーと方角
 
 
 ![image](https://user-images.githubusercontent.com/38822155/113667286-87842f00-96eb-11eb-955c-929c8e880bdf.png)
+
+
+### 自分用実行下準備
+```
+xming 起動
+export DISPLAY=localhost:0.0
+```
